@@ -1,0 +1,25 @@
+{% extends "templates/landing.njk" %}
+
+{% block demostyles %}
+<link rel="stylesheet" href="/assets/css/xrayhtml.css">
+{% endblock %}
+
+
+{% block demoscripts %}
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/vue.js"></script>
+<script src="/assets/js/xrayhtml.js"></script>
+<script src="/assets/js/beautify-html.js"></script>
+<script src="/assets/js/patternlib.js"></script>
+
+<script>
+{% include "data/component.js" %}
+var data = appdata;
+var demo = new Vue({
+  el: '#demo', 
+  data: data,
+  computed: componentComputedData,
+	methods: componentMethods
+});
+</script>
+{% endblock %}

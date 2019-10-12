@@ -1,0 +1,238 @@
+/* Example Pattern Library */
+
+body {
+	font-family: Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.a11y-only {
+	position: absolute;
+	display: inline-block;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+h1:first-child,
+h2:first-child, 
+h3:first-child {
+	margin-top: 0;
+} 
+h1:first-child {
+	line-height: 1;	
+}
+
+.topnav, 
+.subnav {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.subnav {
+	margin-left: 1.2rem;
+}
+.topnav a,
+.subnav a {
+	display: inline-block;
+	padding: .6em 0;
+	font-size: 1em;
+}
+.subnav a {
+	padding: .4em 0;
+	font-size: .9em;
+}
+.topnav a:active,
+.topnav a:hover,
+.subnav a:active,
+.subnav a:hover {}
+
+.topnav a.active {
+	font-weight: bold;
+}
+.subnav a.active {
+	font-weight: bold;
+}
+
+.topnav > li {
+	border-top: 1px solid #ddd;
+}
+
+.masthead {
+	grid-area: mast;
+	background-color: #000D4D;
+	color: #fff;
+}
+.masthead p {
+	font-size: 1.2rem;
+	margin: 0;
+	opacity: .8;
+}
+
+.docs-main > h1,
+.docs-main > h2,
+.docs-main > h3,
+.api-form > h3 {
+	margin: 1.6em 0 .8em;
+}
+.docs-main > h1:first-child,
+.docs-main > h2:first-child,
+.docs-main > h3:first-child {
+	margin-top: 0;
+}
+.docs-main > h2 {
+	font-size: 28px;
+}
+.docs-main > h3,
+.api-form > h3 {
+	font-size: 1.2em;
+}
+.api-form > h3 {
+	font-size: 24px;
+	border-top: 1px solid #ddd;
+	padding-top: .8em;
+}
+.api-form > h3 + p {
+	margin: 0 0 1.8em;
+}
+.api-form input[type="text"] {
+	font-size: 16px;
+	padding: .5em;
+	min-width: 20em;
+}
+
+/* multi-column version:
+
+.page {
+	display: grid;
+	grid-template-columns: 200px 1fr;
+	grid-template-areas:
+		"mast mast"
+		"sidebar main";
+}
+.docs-sidebar {
+	grid-area: sidebar;
+}
+.docs-main {
+	grid-area: main;
+}
+*/
+.page > * {
+	padding: 2rem 1.5rem 1.5rem;
+}
+
+.docs-main {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.docs-main > p {
+	max-width: 37em;
+}
+
+.rules + ul {
+	margin: .3em 0;
+	padding: 0 0 0 1.2em;
+}
+.rules + ul li, 
+.api-table li {
+	max-width: 37em;
+}
+.rules + ul li:not( :last-child ), 
+.api-table li:not( :last-child ) {
+	padding: 0 0 .5em;
+}
+.docs-main code {
+	font-size: 1.2em;
+	color: #0D128C;
+}
+.docs-main label {
+	display: inline-block;
+	padding: .3em 0;
+}
+.docs-main fieldset {
+	border: 0;
+	margin: 1.5em 0 0;
+	padding: 0;
+}
+.docs-main .label-text {
+	display: block;
+	margin: 0 0 .8em;
+}
+
+.demo {
+	margin: 2.8em 0 0;
+}
+
+.api-table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+}
+.api-table code {
+	font-weight: bold;
+}
+.api-table td,
+.api-table th {
+	text-align: left;
+	vertical-align: top;
+	padding: 10px;
+	border-bottom: 1px solid #f0f0f0;
+	min-width: 120px;
+}
+.api-table th:first-child,
+.api-table th:last-child {
+	width: 180px;
+}
+.api-table td:first-child,
+.api-table th:first-child {
+	padding-left: 0;
+}
+.api-table th,
+.docs-main .label-text {
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #888;
+}
+.api-table ul {
+	margin: .5em 0 .5em 1em;
+	padding: 0 0 0 1em;
+}
+.api-table p:first-child {
+	margin-top: 0;
+}
+.api-option :checked + .check-radio-text {
+	font-weight: bold;
+}
+
+
+/* xray overrides */
+.docs-main .xrayhtml {
+	padding: 0;
+	border-radius: 0;
+	margin: 0;
+}
+.docs-main .xrayhtml .xraytitle {
+	display: none;
+}
+.docs-main .xrayhtml.method-inline .source-panel {
+	margin: 0 !important;
+	color: #444;
+	min-height: 150px;
+	font-size: 1.1em;
+	max-height: 220px;
+	overflow: auto;
+}
+.docs-main .xrayhtml .source-panel pre {
+	padding: 1.2em;
+}
+.docs-main .xrayhtml .source-panel code {
+	color: #3333FF;
+	font-size: 1em;
+}
+.docs-main .xrayhtml .snippet {
+	overflow: hidden;
+	resize: both;
+	padding: 1em;
+	max-width: 100%;
+	min-width: 150px;
+}

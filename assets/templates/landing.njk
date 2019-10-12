@@ -1,0 +1,10 @@
+{% extends "templates/basic.njk" %}
+
+{% block subnav %}
+<ul class="subnav">
+{% for component in collections.component %}
+<li><a href="{{component.url}}" class="{% if page.url == component.url %}active{% endif %}">{{component.data.title}}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
+

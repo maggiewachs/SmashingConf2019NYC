@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Project Documentation: {{title}}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="/assets/css/styles.css">
+
+	{% block demostyles %}{% endblock %}
+</head>
+
+<body>
+
+{% block page %}
+<div class="page">
+	<!-- Future project: build out a sample pattern library:
+	<div class="masthead">
+		<p>Example Pattern Library</p>
+	</div>
+	<div class="docs-sidebar">
+		<ul class="topnav" role="navigation">
+		{% for landing in collections.landing %}
+		<li><a href="{{landing.url}}" class="{% if page.url == landing.url %}active{% endif %}">{{landing.data.title}}</a>
+			{% if landing.data.subnav %}
+			{% block subnav %}{% endblock %}
+			{% endif %}
+		</li>
+		{% endfor %}
+		</ul>		
+	</div> -->
+
+	<div class="docs-main">
+		<h1>{{title}}</h1>
+
+		{{ content | safe }}
+	</div>
+</div>
+{% endblock %}
+
+{% block demoscripts %}{% endblock %}
+
+</body>
+</html>
