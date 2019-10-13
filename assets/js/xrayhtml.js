@@ -29,13 +29,14 @@ window.jQuery = window.jQuery || window.shoestring;
 				var init = $( this ).data( "init." + pluginName );
 
 				if( init ) {
-					return false;
+					$( this )[ pluginName ]( "_updateSource" );
 				}
-
-				$( this )
-					.data( "init." + pluginName, true )
-					[ pluginName ]( "_init" )
-					.trigger( "create." +  pluginName );
+				else {
+					$( this )
+						.data( "init." + pluginName, true )
+						[ pluginName ]( "_init" )
+						.trigger( "create." +  pluginName );
+				}
 			});
 		},
 		_init: function() {
@@ -123,6 +124,12 @@ window.jQuery = window.jQuery || window.shoestring;
 
 				})
 				.insertBefore( el );
+		},
+		_updateSource: function() {
+			var el = this;
+			var codeblock = $( el ).find( ".snippet" ).html();
+			var cleaned = html_beautify( codeblock );
+			$( el ).find( "." + o.classes.sourcepanel ).find( "code" ).text( cleaned );
 		},
 		_createSource: function() {
 			var el = this;
@@ -221,8 +228,8 @@ window.jQuery = window.jQuery || window.shoestring;
 		}
 	}
 	// init either on beforeenhance event or domready, whichever comes first.
-	$( document ).bind("beforeenhance", init );
-	$( init );
+	//$( document ).bind("beforeenhance", init );
+	//$( init );
 
 
 }( jQuery ));

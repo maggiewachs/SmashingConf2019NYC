@@ -50,7 +50,7 @@ Product tables provide a complete list of our product inventory, availability, a
 ## Code 
 
 <div id="demo">
-<div v-xrayhtml>
+<div data-xrayhtml>
 <table :class="{{datasrc}}.baseclass + ' spacing-' + spacing">
 	<caption class="a11y-only"></caption>
 	<tfoot>
@@ -175,6 +175,22 @@ Product tables provide a complete list of our product inventory, availability, a
 </table>
 </form>
 </div><!-- /demo -->
+
+
+<script>
+{% include "data/component.js" %}
+var data = appdata;
+var demo = new Vue({
+  el: '#demo', 
+  data: data,
+  mounted: function(){
+  	jQuery( "[data-xrayhtml]" )[ "xrayhtml" ]();
+  },
+  updated: function(){
+  	jQuery( "[data-xrayhtml]" )[ "xrayhtml" ]();
+  }
+});
+</script>
 
 
 ## Other things to include on a component page:{.rules}
