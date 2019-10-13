@@ -1,6 +1,14 @@
 /*! X-rayHTML - v2.3.0 - 2019-06-28
 * https://github.com/filamentgroup/x-rayhtml
 * Copyright (c) 2019 Filament Group; Licensed MIT */
+
+
+/* ----- NOTE: 
+This is a customized version to work with this example code. 
+I added a new method, _updateSource (line 133), to refresh the html example 
+when Vue fires its update method. */
+
+
 window.jQuery = window.jQuery || window.shoestring;
 
 (function( $ ) {
