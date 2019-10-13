@@ -81,7 +81,7 @@ Product tables provide a complete list of our product inventory, availability, a
 </table>
 </div>
 
-<form class="api-form" data-demo-form>
+<form class="api-form">
 <h3>Configuration options</h3>
 <fieldset>
 	<label>
@@ -175,22 +175,6 @@ Product tables provide a complete list of our product inventory, availability, a
 </table>
 </form>
 </div><!-- /demo -->
-
-
-<script>
-{% include "data/component.js" %}
-var data = appdata;
-var demo = new Vue({
-  el: '#demo', 
-  data: data,
-  mounted: function(){
-  	jQuery( "[data-xrayhtml]" )[ "xrayhtml" ]();
-  },
-  updated: function(){
-  	jQuery( "[data-xrayhtml]" )[ "xrayhtml" ]();
-  }
-});
-</script>
 
 
 ## Other things to include on a component page:{.rules}

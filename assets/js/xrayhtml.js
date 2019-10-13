@@ -178,13 +178,12 @@ window.jQuery = window.jQuery || window.shoestring;
 				code = code.replace( new RegExp( leadingWhiteSpace[ 1 ], "gmi" ), "\n" );
 			}
 
-			source = document.createTextNode( code );
-
 			wrap.setAttribute( "class", "snippet" );
 
 			$( el ).wrapInner( wrap );
 
-			codeel.appendChild( source );
+			var cleaned = html_beautify( code );
+			$( codeel ).text( cleaned );
 			preel.appendChild( codeel );
 
 			sourcepanel.setAttribute( "class", o.classes.sourcepanel );
