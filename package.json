@@ -20,7 +20,7 @@
   "dependencies": {
     "jquery": "^3.4.1",
     "js-beautify": "^1.10.2",
-    "xrayhtml": "^2.3.0", // need to update this to work with Vue
+    "xrayhtml": "^2.3.0",
     "vue": "^2.6.10"
   }
 }
